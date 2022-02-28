@@ -1,0 +1,24 @@
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Mobile No</th>
+            
+                <button mat-raised-button color="primary"  routerLink="/contacts" > Get contants</button>
+         
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> {{UserProfile?.id}} </td>    
+            <td> {{UserProfile?.name}} </td>    
+            <td> {{UserProfile?.email}} </td>    
+            <td> {{UserProfile?.mobile}} </td>    
+           
+        </tr>
+    </tbody>
+</table>

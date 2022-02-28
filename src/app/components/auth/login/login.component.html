@@ -1,0 +1,41 @@
+<mat-card>
+    <div class="bodyy">
+      <h1>Login</h1>
+      <p>Submit details carefully</p>
+      <form [formGroup]="loginForm" (ngSubmit)="loginUser()" >
+        
+             <!-- Errors -->
+      <div *ngIf="errors?.email" class="alert alert-danger mt-3">
+        {{ errors?.email }}
+    </div>
+    <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+        {{ errors?.password }}
+    </div>
+    <div *ngIf="errors?.error" class="alert alert-danger mt-3">
+        {{ errors?.error }}
+    </div>
+       
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your email</mat-label>
+          <input formControlName="email" matInput placeholder="pat@example.com" >
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="email && email.invalid && email.touched">Not a valid Email id</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+          <mat-error *ngIf="password && password.invalid && password.touched">Min 8 character password is required</mat-error>
+          <button class="pass" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+           
+          </button>
+        </mat-form-field> <br>
+        <button [disabled]="loginForm.invalid" mat-raised-button color="primary">Login</button>
+        <a routerLink="/register" mat-button color="primary">New User? Register</a>
+
+      </form>
+    </div>
+
+
+  </mat-card>

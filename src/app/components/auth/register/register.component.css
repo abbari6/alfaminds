@@ -1,0 +1,18 @@
+
+.bodyy{
+    
+    text-align: center;
+   
+}
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 80%;
+}
+
+.pass {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
